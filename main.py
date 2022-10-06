@@ -13,8 +13,8 @@ class Question:
         self.notes = notes
 
 # questions to ask
-polish_level = [3]
-russian_level =[2]
+polish_level = [1,2]
+russian_level =[1,2]
 
 # create list of questions
 questions = []
@@ -55,7 +55,7 @@ if 4 in polish_level:
     questions.append( Question("Polish", "cabbage", "kapusta", "kah-POOST-ah"))
 
 if 4 in russian_level:
-    questions.append( Question("Russian", "bread", "chleb", "Hhhleb"))
+    questions.append( Question("Russian", "bread", "хлеб", "Hhhleb"))
     questions.append( Question("Russian", "apple", "яблоко", "YAB-lah-kah"))
     questions.append( Question("Russian", "cabbage", "капуста", "kah-POOST-ah"))
 
@@ -90,13 +90,19 @@ def ask_q():
 
             print("Pronounced like: " + questions[q_num].notes)
             print()
+        else:
+            ask_q() #RECURSION!!!! to always ask a valid question
 
 ask_q.counter = 1 #static variable to count questions
 
 def main():
+    print(len(questions))
+    for i in range(len(questions)):
         ask_q()
-        #ask_q()
-        #ask_q()
+
+    print("you got " + str(len(got_correct)) + " correct")
+    print("you got " + str(len(got_wrong)) + " wrong")
+
 
 if __name__ == "__main__":
     main()
