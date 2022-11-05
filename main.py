@@ -15,6 +15,7 @@ class Question:
 # questions to ask
 polish_level = [1,2]
 russian_level =[1,2]
+irish_level = [2]
 
 # create list of questions
 questions = []
@@ -37,6 +38,10 @@ if 2 in russian_level:
     questions.append( Question("Russian", "hi", "привет", "PRI-vi-et"))
     questions.append( Question("Russian", "goodbye", "до свидания", "daw svi-DAN-ya"))
 
+if 2 in irish_level:
+    questions.append( Question("Irish", "hi", "dia duit", "jee-ah ditch"))
+    questions.append( Question("Irish", "goodbye", "slán", "slaun"))
+
 #LEVEL 3. MAN WOMAN CHILD
 if 3 in polish_level:
     questions.append( Question("Polish", "man", "mężczyzna", "mess-CHEZ-nah"))
@@ -47,6 +52,11 @@ if 3 in russian_level:
     questions.append( Question("Russian", "man", "мужчина", "moo-SHEEN-ah"))
     questions.append( Question("Russian", "woman", "женщина", "ZJANE-shin-ah"))
     questions.append( Question("Russian", "child", "ребёнок", "Ree-bion-ok"))
+
+if 3 in irish_level:
+    questions.append( Question("Irish", "man", "fear", "far"))
+    questions.append( Question("Irish", "woman", "bean", "ban"))
+    questions.append( Question("Irish", "child", "páiste", "posh-cha"))
 
 #level 4: COMMON FOOD
 if 4 in polish_level:
@@ -59,9 +69,15 @@ if 4 in russian_level:
     questions.append( Question("Russian", "apple", "яблоко", "YAB-lah-kah"))
     questions.append( Question("Russian", "cabbage", "капуста", "kah-POOST-ah"))
 
+if 4 in irish_level:
+    questions.append( Question("Irish", "bread", "arán", "arawn"))
+    questions.append( Question("Irish", "apple", "úll", "ool"))
+    questions.append( Question("Irish", "cabbage", "cabáiste", "ca-bauw-styah"))
+
+
 
 def print_q(q_number, question):
-    if question.category == "Russian" or question.category == "Polish":
+    if question.category == "Russian" or question.category == "Polish" or question.category == "Irish":
        print(str(q_number) + ". (" + question.category + ") How do you say " + question.english + " in " + question.category + "?")
 
 already_asked = []
